@@ -1,10 +1,8 @@
 import express from 'express';
 import morgan from 'morgan';
 
-
 import drawingRoutes from './routes/drawing.routes.js'
 import userRoutes from './routes/user.routes.js'
-
 
 const app = express();
 
