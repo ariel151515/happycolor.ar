@@ -2,10 +2,10 @@ import User from '../models/Users.js'
 
 export const postUser = async (req, res) => {
     try {
-        const { nombre, pais, email, password, impressions, subscription, role } = req.body
+        const { name, pais, email, password, impressions, subscription, role } = req.body
 
         const user = new User({
-            nombre,
+            name,
             pais,
             email,
             password,

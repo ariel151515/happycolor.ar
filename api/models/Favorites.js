@@ -4,7 +4,7 @@ const favoritesShema = new Schema({
     nombre: String,
     descripcion: String,
     img: String,
-    categoriaId: String,
+    categoryId: String,
     usuarioId: String // usuario que subio el docuemnto
 },
     {

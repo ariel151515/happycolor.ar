@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose";
 
-const drawingsShema = new Schema({
+const imagesShema = new Schema({
     name: String,
     descripcion: String,
     img: String,
@@ -12,5 +12,5 @@ const drawingsShema = new Schema({
     }
 )
 
-export default model('Drawings', drawingsShema)
+export default model('Images', imagesShema)
 

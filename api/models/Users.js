@@ -1,13 +1,13 @@
 import { Schema, model } from "mongoose";
 
 const usersShema = new Schema({
-    nombre: {
+    name: {
         type: String,
         unique: false,
     },
     email: {
         type: String,
-        unique: true,
+        unique: false,
     },
     pais: {
         type: String,
@@ -15,8 +15,8 @@ const usersShema = new Schema({
     },
     password: {
         type: String,
-        unique: true,
-        bcrypt: true
+        unique: false
+        //bcrypt: true
     },
     impressions: {
         type: String,
