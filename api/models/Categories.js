@@ -1,8 +1,10 @@
 import { Schema, model } from "mongoose";
 
 const categoriesShema = new Schema({
-    nombre: String,
-    unique: true
+    name: {
+        type: String,
+        unique: false
+    },
 },
     {
         timestamps: true, // createdAt y updatedAt
