@@ -5,6 +5,7 @@ import drawingRoutes from './routes/drawing.routes.js'
 import userRoutes from './routes/user.routes.js'
 import categoriesRoutes from './routes/categories.routes.js'
 import subCategories from './routes/subCategories.routes.js'
+import favoritos from './routes/favoritos.routes.js'
 
 const app = express()
 
@@ -15,5 +16,6 @@ app.use('/api', drawingRoutes)
 app.use('/api', userRoutes)
 app.use('/api', categoriesRoutes)
 app.use('/api', subCategories)
+app.use('/api', favoritos)
 
 export default app
