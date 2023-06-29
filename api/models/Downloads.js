@@ -3,11 +3,11 @@ import { Schema, model } from "mongoose";
 const downloadsShema = new Schema({
     idDrawing: {
         dibujoId: String,
-        unique: true
+        unique: false
     },
     idUser: {
         dibujoId: String,
-        unique: true
+        unique: false
     },
 }, {
     timestamps: true,
