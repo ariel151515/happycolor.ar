@@ -21,7 +21,11 @@ export const postCategories = async (req, res) => {
 }
 
 export const getCategories = async (req, res) => {
-    const categories = await Categories.find()
-    res.status(200).json(categories);
+    try {
+        const categories = await Categories.find()
+        res.status(200).json(categories);
+    } catch (err) {
+        res.status(400).send('Error al traer categoria')
+    }
 }
 

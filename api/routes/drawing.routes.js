@@ -1,10 +1,9 @@
 import { Router } from "express";
 const router = Router();
 
-import { getDrawings, postDrawings } from '../controllers/drawing.controllers.js'
+import * as ctrl from '../controllers/drawing.controllers.js'
 
-router.get('/drawings', getDrawings)
-router.post('/drawings', postDrawings)
-
+router.get('/drawings', ctrl.getDrawings)
+router.post('/drawings', ctrl.postDrawings)
 
 export default router;

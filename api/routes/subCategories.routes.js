@@ -1,10 +1,10 @@
 import { Router } from "express";
 const router = Router();
 
-import { postSubCategories, getSubCategories } from '../controllers/subCategories.controllers.js'
+import * as ctrl from '../controllers/subCategories.controllers.js'
 
-router.post('/subcategories', postSubCategories)
-router.get('/subcategories', getSubCategories)
-
+router.post('/subcategories', ctrl.postSubCategories)
+router.get('/subcategories', ctrl.getSubCategories)
+router.get('/subcategories/:id', ctrl.getFiltraLasSubcategoriasDeUnaCategoria)
 
 export default router;

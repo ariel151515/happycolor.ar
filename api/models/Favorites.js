@@ -1,11 +1,8 @@
 import { Schema, model } from "mongoose";
 
 const favoritesShema = new Schema({
-    nombre: String,
-    descripcion: String,
-    img: String,
-    categoryId: String,
-    usuarioId: String // usuario que subio el docuemnto
+    id: String,
+    idUsuario: String
 },
     {
         timestamps: true,

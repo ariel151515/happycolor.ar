@@ -1,6 +1,5 @@
 import SubCategories from '../models/SubCategories.js'
 
-
 export const postSubCategories = async (req, res) => {
     try {
         const { name, parentCategory } = req.body
@@ -32,5 +31,20 @@ export const getSubCategories = async (req, res) => {
     } catch (err) {
         console.log
         res.status(400).json({ message: 'Error al traer las subcategoria' })
+    }
+}
+
+
+export const getFiltraLasSubcategoriasDeUnaCategoria = async (req, res) => {
+    try {
+        const idCategoria = req.params.id
+
+        const subcategorias = await SubCategories.find()
+        res.status(200).json(subcategorias)
+
+        console.log(subcategorias)
+
+    } catch (err) {
+        res.status(400).json({ message: 'Error' })
     }
 }
