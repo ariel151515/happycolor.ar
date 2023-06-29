@@ -7,7 +7,7 @@ const usersShema = new Schema({
     },
     email: {
         type: String,
-        unique: false,
+        unique: true,
     },
     pais: {
         type: String,
@@ -15,7 +15,7 @@ const usersShema = new Schema({
     },
     password: {
         type: String,
-        unique: false
+        unique: true
         //bcrypt: true
     },
     impressions: {
