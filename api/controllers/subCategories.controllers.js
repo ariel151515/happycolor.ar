@@ -35,14 +35,15 @@ export const getSubCategories = async (req, res) => {
 }
 
 
+
 export const getFiltraLasSubcategoriasDeUnaCategoria = async (req, res) => {
     try {
         const idCategoria = req.params.id
-
         const subcategorias = await SubCategories.find()
-        res.status(200).json(subcategorias)
+        const filtrado = subcategorias.filter((params) => params.parentCategory === idCategoria);
 
-        console.log(subcategorias)
+        res.status(200).json(filtrado)
+
 
     } catch (err) {
         res.status(400).json({ message: 'Error' })
