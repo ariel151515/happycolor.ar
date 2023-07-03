@@ -22,4 +22,6 @@ app.use('/api', subCategories)
 app.use('/api', favoritos)
 app.use('/api/:id', filtraLosFavoritosDeUnUsuario)
 
+
+// app.use('/api/:id', filtraLosFavoritosDeUnUsuario)
 export default app
