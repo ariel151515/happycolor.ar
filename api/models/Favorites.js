@@ -10,4 +10,4 @@ const favoritesShema = new Schema({
     }
 )
 
-export default model('Favorites', favoritesShema)
+export default model('favorites', favoritesShema)

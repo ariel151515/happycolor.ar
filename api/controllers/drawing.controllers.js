@@ -1,4 +1,4 @@
-import Drawings from '../models/Drawings.js'
+import Drawings from '../models/drawings.js'
 
 export const postDrawings = async (req, res) => {
     try {
