@@ -12,5 +12,5 @@ const drawingsShema = new Schema({
     }
 )
 
-export default model('Drawings', drawingsShema)
+export default model('drawings', drawingsShema)
 

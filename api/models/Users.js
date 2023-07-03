@@ -1,4 +1,5 @@
 import { Schema, model } from "mongoose";
+import bcrypt from "bcryptjs";
 
 const usersShema = new Schema({
     name: {
@@ -35,6 +36,16 @@ const usersShema = new Schema({
     versionKey: false
 }
 )
+
+
+usersShema.statics.encryptPassword = async (password) => {
+    const salt = await bcrypt.genSalt(10);
+    return await bcrypt.hash(password, salt);
+};
+
+usersShema.statics.comparePassword = async (password, receivedPassword) => {
+    return await bcrypt.compare(password, receivedPassword)
+}
 
 export default model('Users', usersShema)
 

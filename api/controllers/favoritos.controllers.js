@@ -1,4 +1,4 @@
-import Favoritos from '../models/Favorites.js'
+import Favoritos from '../models/favorites.js'
 
 export const postFavoritos = async (req, res) => {
     try {

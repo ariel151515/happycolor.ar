@@ -1,4 +1,4 @@
-import SubCategories from '../models/SubCategories.js'
+import SubCategories from '../models/subcategories.js'
 
 export const postSubCategories = async (req, res) => {
     try {
