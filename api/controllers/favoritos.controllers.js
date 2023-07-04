@@ -19,15 +19,18 @@ export const postFavoritos = async (req, res) => {
     }
 }
 
-export const getFavoritos = async (req, res) => {
-    try {
-        const favoritos = await Favoritos.find()
-        res.status(200).json(favoritos)
 
-    } catch (err) {
-        res.status(400).json({ message: 'Error al traer  favoritos' })
-    }
-}
+
+// ctrl + k / ctrl + c  -  descomentar:  ctrl + k / ctrl + u
+// export const getFavoritos = async (req, res) => {
+//     try {
+//         const favoritos = await Favoritos.find()
+//         res.status(200).json(favoritos)
+
+//     } catch (err) {
+//         res.status(400).json({ message: 'Error al traer  favoritos' })
+//     }
+// }
 
 
 export const getFiltraLosFavoritosDeUnUsuario = async (req, res) => {
