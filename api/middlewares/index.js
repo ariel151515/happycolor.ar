@@ -1,3 +1,3 @@
-import { verifyToken } from "./auth.jwt.js";
+import { verifyToken, isAdmin, isUser } from "./auth.jwt.js";
 
-export { verifyToken }
+export { verifyToken, isAdmin, isUser }
