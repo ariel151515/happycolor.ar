@@ -3,7 +3,7 @@ const router = Router();
 
 import * as ctrl from '../controllers/auth.controllers.js'
 
-router.post('/user', ctrl.signUp)
-//router.get('/user', ctrl.getUser)
+router.post('/user/signup', ctrl.signUp)
+router.post('/user/signin', ctrl.signIn)
 
 export default router;

@@ -64,13 +64,26 @@ export const signUp = async (req, res) => {
 
 export const signIn = async (req, res) => {
     try {
-        const users = await User.find()
-        res.json(users);
+        // populate puebla, osea que devuelve todo el objeto entero y no solo el id
+        const userFound = await User.findOne({ email: req.body.email }).populate("roles")
+        if (!userFound) return res.status(400).json({ message: "User not found" })
+
+        // devuelve un booleano al comparar las contraseñas
+        const matchPassword = await User.comparePassword(req.body.password, userFound.password)
+
+        if (!matchPassword) return res.status(401).json({ token: null, message: 'Invalid password' })
+
+        //console.log(userFound)
+
+        const token = jwt.sign({ id: userFound._id }, config.SECRET, {
+            expiresIn: 864000 // Equivale a un dia
+        })
+
+        res.json({ token })
 
     } catch (err) {
         console.log(err)
-        res.status(500).json({ message: 'Error al traer los usuarios' })
-
+        res.status(500).json({ message: 'Error' })
     }
 }
 
