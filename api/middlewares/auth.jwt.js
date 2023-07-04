@@ -3,10 +3,9 @@ import config from "../config.js"
 import User from './../models/users.js'
 import Role from './../models/role.js'
 
+
 export const verifyToken = async (req, res, next) => {
-
     const token = req.headers["x-access-token"]
-
     if (!token) return res.status(403).json({ message: "No token provided" })
 
     try {
