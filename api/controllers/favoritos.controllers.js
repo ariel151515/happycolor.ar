@@ -3,14 +3,12 @@ import Favoritos from '../models/favorites.js'
 export const postFavoritos = async (req, res) => {
     try {
         const { id, idUsuario } = req.body
-
         const favorito = new Favoritos({
             id,
             idUsuario
         })
 
         await favorito.save()
-
         res.status(300).json(favorito)
 
     } catch (err) {
@@ -40,7 +38,6 @@ export const getFiltraLosFavoritosDeUnUsuario = async (req, res) => {
         const filtrado = fav.filter((params) => params.idUsuario === idUser);
 
         res.status(200).json(filtrado)
-
 
     } catch (err) {
         res.status(400).json({ message: 'Error' })

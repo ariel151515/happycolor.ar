@@ -1,14 +1,17 @@
 import Drawings from '../models/drawings.js'
 
+
 export const postDrawings = async (req, res) => {
     try {
-        const { name, description, img, categoriaId, subcategoriaId } = req.body
+        const { title, description, img, categoryId, subcategoriaId } = req.body
+
+        console.log(description)
 
         const drawing = new Drawings({
-            name,
+            title,
             description,
             img,
-            categoriaId,
+            categoryId,
             subcategoriaId
         })
 
@@ -28,6 +31,6 @@ export const getDrawings = async (req, res) => {
         const drawing = await Drawings.find()
         res.status(200).json(drawing);
     } catch (err) {
-        res.status(400).send('Error al traer categoria')
+        res.status(400).send('Error al mostrar entradas')
     }
 }
