@@ -1,3 +1,4 @@
-import { verifyToken, isAdmin, isUser } from "./auth.jwt.js";
+import { verifyToken } from "./auth.jwt.js";
+import { verificarUsuarioExistente, verificaCategoriaExistente, isAdmin } from "./verifySignup.js";
 
-export { verifyToken, isAdmin, isUser }
+export { verifyToken, isAdmin, verificarUsuarioExistente, verificaCategoriaExistente }

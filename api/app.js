@@ -7,10 +7,12 @@ import categoriesRoutes from './routes/categories.routes.js'
 import subCategories from './routes/subCategories.routes.js'
 import favoritos from './routes/favoritos.routes.js'
 import filtraLosFavoritosDeUnUsuario from './routes/favoritos.routes.js';
+import getUser from './routes/user.routes.js'
 import { createRoles } from './libs/initialSetap.js'
 
 const app = express()
 createRoles()
+
 
 app.use(morgan('dev'))
 app.use(express.json())
@@ -20,7 +22,7 @@ app.use('/api', authRoutes)
 app.use('/api', categoriesRoutes)
 app.use('/api', subCategories)
 app.use('/api', favoritos)
-app.use('/api/:id', filtraLosFavoritosDeUnUsuario)
-
+app.use('/api', getUser)
+app.use('/api', filtraLosFavoritosDeUnUsuario)
 
 export default app

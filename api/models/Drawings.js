@@ -1,10 +1,11 @@
 import { Schema, model } from "mongoose";
 
 const drawingsShema = new Schema({
-    name: String,
-    descripcion: String,
+    title: String,
+    description: String,
     img: String,
-    categoryId: String
+    categoryId: String,
+    subcategoriaId: String
 },
     {
         timestamps: true,

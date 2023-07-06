@@ -19,10 +19,9 @@ const usersShema = new Schema({
         unique: true
         //bcrypt: true
     },
-    impressions: {
-        type: String,
-        unique: false,
-    },
+    impressions: [{
+        idEntrada: String
+    }],
     subscription: { // Standar standard - premium
         type: String,
         unique: false,

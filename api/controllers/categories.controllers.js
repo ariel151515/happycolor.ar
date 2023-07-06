@@ -3,9 +3,7 @@ import Categories from '../models/categories.js'
 
 export const postCategories = async (req, res) => {
     try {
-
         const { name } = req.body
-
         const category = new Categories({
             name
         })
@@ -13,12 +11,14 @@ export const postCategories = async (req, res) => {
         const saveCategory = category
         await saveCategory.save()
 
-        res.status(200).json(saveCategory);
+        res.status(201).json({ message: '¡Categoria creada con exito!' });
 
     } catch (err) {
         res.status(400).send('Error al crear categoria')
     }
 }
+
+
 
 export const getCategories = async (req, res) => {
     try {
