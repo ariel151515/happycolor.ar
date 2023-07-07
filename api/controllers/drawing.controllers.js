@@ -34,3 +34,41 @@ export const getDrawings = async (req, res) => {
         res.status(400).send('Error al mostrar entradas')
     }
 }
+
+
+
+
+export const getDrawingsCategorias = async (req, res) => {
+    try {
+
+        let id = req.params
+
+        //js
+        // let result = await Drawings.find()
+        // let filtro = result.filter((entrada) => entrada.categoryId === id.categoria)
+
+        const searchQuery = { categoryId: { $regex: id.categoria } };
+        const result = await Drawings.find(searchQuery);
+
+        res.status(200).json({ result })
+    } catch (err) {
+        console.log(err)
+        res.status(200).send('Error al mostrar entradas')
+    }
+}
+
+
+
+export const getDrawingsSubCategorias = async (req, res) => {
+    try {
+
+        let id = req.params
+        const searchQuery = { subcategoriaId: { $regex: id.subcategoria } };
+        const result = await Drawings.find(searchQuery);
+
+        res.status(200).json({ result })
+    } catch (err) {
+        console.log(err)
+        res.status(200).send('Error al mostrar entradas')
+    }
+}

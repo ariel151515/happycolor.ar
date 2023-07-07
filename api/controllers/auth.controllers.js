@@ -20,7 +20,6 @@ export const signUp = async (req, res) => {
 
         // encrypting password
         user.password = await User.encryptPassword(user.password)
-
         const savedUser = user
 
         if (role) {
@@ -61,21 +60,15 @@ export const signUp = async (req, res) => {
 }
 
 
-
-
 export const signIn = async (req, res) => {
     try {
         // populate puebla, osea que devuelve todo el objeto entero y no solo el id
         const userFound = await User.findOne({ email: req.body.email }).populate("roles")
-        console.log(userFound)
-
         if (!userFound) return res.status(404).json({ message: "Email no regitrado" })
 
         // devuelve un booleano al comparar las contraseñas
         const matchPassword = await User.comparePassword(req.body.password, userFound.password)
-
         if (!matchPassword) return res.status(401).json({ message: 'Contraseña incorrecta' })
-
 
         const token = jwt.sign({ id: userFound._id }, config.SECRET, {
             expiresIn: 864000 // Equivale a un dia
