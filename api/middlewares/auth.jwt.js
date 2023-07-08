@@ -13,7 +13,7 @@ export const verifyToken = async (req, res, next) => {
 
         // el objeto decoded devuelve un id
         const user = await User.findById(decoded.id, { password: 0 }) // verifica si existe el id del usuario en el modelo 
-        if (!user) return res.status(404).json({ message: 'no user found' })
+        if (!user) return res.status(404).json({ message: 'Usuario no registrado' })
 
         next()
     } catch (err) {

@@ -3,7 +3,7 @@ import Drawings from './../models/drawings.js'
 // metodos de MongoDB 
 export const searchCtrl = async (req, res) => {
     try {
-        const searchQuery = { title: { $regex: 'leon', $options: 'i' } };
+        const searchQuery = { title: { $regex: req.params.drawing, $options: 'i' } };
         const result = await Drawings.find(searchQuery);
 
         res.status(201).json({ result });

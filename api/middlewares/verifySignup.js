@@ -7,7 +7,6 @@ import jwt from 'jsonwebtoken';
 import Role from './../models/role.js'
 
 
-
 // Verifica si existen los roles
 export const checkRolesExisted = (req, res, next) => {
     if (req.body.roles) {
@@ -22,8 +21,6 @@ export const checkRolesExisted = (req, res, next) => {
 
     next()
 }
-
-
 
 // Verifica si el email del usuario existe al registrarse
 export const verificarUsuarioExistente = async (req, res, next) => {
@@ -42,8 +39,6 @@ export const verificarUsuarioExistente = async (req, res, next) => {
         res.status(500).json({ message: 'Error al rpcesar la solicitud' })
     }
 }
-
-
 
 // verifica si es admin
 export const isAdmin = async (req, res, next) => {
@@ -71,8 +66,6 @@ export const isAdmin = async (req, res, next) => {
         return res.status(401).json({ message: "error" }, err);
     }
 }
-
-
 
 // Verifica categoria existente t tambien subcategoria
 export const verificaCategoriaExistente = async (req, res, next) => {

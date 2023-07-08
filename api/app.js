@@ -26,4 +26,5 @@ app.use('/api', getUser)
 app.use('/api', filtraLosFavoritosDeUnUsuario)
 app.use('/api', searchRoutes)
 
+
 export default app

@@ -6,6 +6,9 @@ import { verifyToken, isAdmin } from './../middlewares/index.js'
 
 router.get('/drawings', ctrl.getDrawings)
 
+// Numero de entradas publicadas
+router.get('/drawings/count', ctrl.getEntradasPublicadas)
+
 // Filtra entradas segun categoria
 router.get('/drawings/:categoria', ctrl.getDrawingsCategorias)
 
@@ -16,3 +19,4 @@ router.get('/drawings/sub/:subcategoria', ctrl.getDrawingsSubCategorias)
 router.post('/drawings', [verifyToken, isAdmin], ctrl.postDrawings)
 
 export default router;
+

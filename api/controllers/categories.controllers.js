@@ -2,6 +2,7 @@ import Categories from '../models/categories.js'
 
 
 export const postCategories = async (req, res) => {
+    console.log(req.body)
     try {
         const { name } = req.body
         const category = new Categories({

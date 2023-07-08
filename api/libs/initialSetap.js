@@ -10,8 +10,7 @@ export const createRoles = async () => {
         // Promise.all ejecuta todas las funciones al mismo tiempo (mas info en videos de async await en Fazt code)
         const values = await Promise.all([
             new Role({ name: 'user' }).save(),
-            new Role({ name: 'admin' }).save(),
-            new Role({ name: 'moderador' }).save(),
+            new Role({ name: 'admin' }).save()
         ])
 
         console.log(values)
@@ -19,3 +18,6 @@ export const createRoles = async () => {
         console.log(err)
     }
 }
+
+
+
