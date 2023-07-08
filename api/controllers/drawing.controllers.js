@@ -35,9 +35,6 @@ export const getDrawings = async (req, res) => {
     }
 }
 
-
-
-
 export const getDrawingsCategorias = async (req, res) => {
     try {
 
@@ -57,8 +54,6 @@ export const getDrawingsCategorias = async (req, res) => {
     }
 }
 
-
-
 export const getDrawingsSubCategorias = async (req, res) => {
     try {
 
@@ -72,3 +67,21 @@ export const getDrawingsSubCategorias = async (req, res) => {
         res.status(200).send('Error al mostrar entradas')
     }
 }
+
+
+// En  número
+export const getEntradasPublicadas = async (req, res, next) => {
+    try {
+
+        const entradasPublicadas = await Drawings.find()
+        const result = entradasPublicadas.length
+
+        res.status(200).json({ result })
+    } catch (err) {
+        console.log(err)
+        res.status(200).send('Error al mostrar entradas')
+    }
+}
+
+// En  número
+export const getDibujosImprimidos = async (req, res, next) => { }
